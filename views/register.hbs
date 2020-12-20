@@ -1,0 +1,63 @@
+ {{> head }} {{> navbar }}
+
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-block bg-register-image p-5 mb-5 text-center">
+                    <img src="img/logo-axapusco.jpg" class="img img-fluid mt-5 pt-5">
+                </div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Crear cuenta</h1>
+                        </div>
+                        <form class="user" id="form-register">
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" name="name" class="form-control form-control-user" id="inputFirstName" placeholder="Nombre(s)" value="Gerardo" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" name="last_name" class="form-control form-control-user" id="inputLastName" placeholder="Apellidos" required value="Bautista Castañeda">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-user" id="inputEmail" placeholder="Correo electrónico" required>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" id="inputArea" required>
+                                    <option value="0">-- Seleccione un área --</option>
+                                    {{#each areas}}
+                                        <option value="{{ this._id }}" id="{{ this._id }}-option-area">{{ this.name }} - {{ this.description }}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="password" name="password" class="form-control form-control-user" id="inputPassword" placeholder="Contraseña" minlength="8" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control form-control-user" id="inputRepeatPassword" placeholder="Repita su contraseña" minlength="8" required value="12345678">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-user btn-block" id="btn-create">
+                                Crear cuenta
+                            </button>
+                            </a>
+                        </form>
+                        <hr>
+                        <div class="text-center">
+                            <a class="small" href="/login">¿Cuenta con una cuenta? Ingrese!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{> footer }}
+<!-- Page level custom scripts -->
+<script src="/js/function_register.js"></script>
